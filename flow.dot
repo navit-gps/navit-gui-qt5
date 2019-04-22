@@ -1,0 +1,59 @@
+digraph {
+  rankdir=LR;
+  compound=true;
+  node [shape="box"];
+  
+  map -> Destination [lhead=cluster_main_menu];
+  
+  subgraph cluster_main_menu {
+    label = "Main menu";
+    color=blue;
+    Destination;
+    "Around me";
+    Route;
+    Settings;
+    Quit [shape="diamond"];
+  }
+  
+  
+  Destination -> Address [lhead=cluster_destination_menu];
+  Settings -> Vehicle [lhead=cluster_settings_menu];
+  
+  subgraph cluster_destination_menu {
+    label = "Destination menu";
+    color=blue;
+    Address;
+    "Online Search";
+    POIs;
+    Bookmarks;
+    "Recent Destinations";
+  }  
+  
+  "Recent Destinations" -> Select [lhead=cluster_recent_destinations_menu];
+  "Bookmarks" -> "Select Bookmark" [lhead=cluster_bookmarks_menu];
+
+  subgraph cluster_settings_menu {
+    label = "Settings menu";
+    color=blue;
+    Vehicle;
+    "Map data";
+    "Map Layout";
+    "Routing";
+  }  
+
+
+  subgraph cluster_recent_destinations_menu {
+    label = "Recent destinations menu";
+    color=blue;
+    "Select";
+    Clear;
+  }  
+
+  subgraph cluster_bookmarks_menu {
+    label = "Bookmarks menu";
+    color=blue;
+    "Select Bookmark";
+    Delete;
+  }  
+  
+}
