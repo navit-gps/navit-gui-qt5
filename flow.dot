@@ -8,7 +8,7 @@ digraph {
   subgraph cluster_main_menu {
     label = "Main menu";
     color=blue;
-    Destination;
+    Destination [URL="https://github.com/navit-gps/navit/blob/trunk/navit/gui/qt5_qml/skins/modern/destination.qml"];
     "Around me";
     Route;
     Settings;
